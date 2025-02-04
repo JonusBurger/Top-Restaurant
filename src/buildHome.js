@@ -1,4 +1,8 @@
+import wineImg from "../assets/schnitzel.jpg"
+import schnitzelImg from "../assets/wine.jpeg"
+
 export default function buildHomePage() {
+    console.log("buildHomePage run");
     const mainDiv = document.getElementById("content");
     const bannerDiv = document.createElement("div");
     bannerDiv.classList.add("banner");
@@ -9,8 +13,8 @@ export default function buildHomePage() {
     mainGridDiv.appendChild(headerElement);
     const contentList = [
         "<p>This Restaurant is made and build to blow you mind!</p> <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur beatae rem adipisci eligendi exercitationem maxime nam reiciendis eaque blanditiis corrupti sit error quod quam delectus minus veritatis, consequatur libero maiores.</p>",
-        "<img src=\"../assets/schnitzel.jpg\">",
-        "<img src=\"../assets/wine.jpg\">",
+        `<img src=${schnitzelImg}>`,
+        `<img src=${wineImg}>`,
         "<p>This Restaurant is made and build to blow you mind!</p> <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur beatae rem adipisci eligendi exercitationem maxime nam reiciendis eaque blanditiis corrupti sit error quod quam delectus minus veritatis, consequatur libero maiores.</p>"
     ]
     for (let i = 0; i<4; i++){

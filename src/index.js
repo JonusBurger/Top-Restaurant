@@ -1,4 +1,4 @@
 import "./styles.css";
-import buildHome from "./buildHome.js"
+import buildHomePage from "./buildHome.js"
 console.log("Moin Maista");
-buildHome();
+buildHomePage();
