@@ -23,4 +23,6 @@ export default function buildHomePage() {
         cellDiv.classList.add("cell");
         mainGridDiv.appendChild(cellDiv);
     }
+    mainDiv.appendChild(bannerDiv);
+    mainDiv.appendChild(mainGridDiv);
 }
