@@ -3,8 +3,11 @@ import buildHomePage from "./buildHome.js"
 
 console.log("Moin Maista");
 
-function buildPage() {
+const pageBuilder = (function () {
+    //Setting Up HomePage on start
+    buildHomePage();
     const mainDiv = document.getElementById("content");
+    console.log("function ran");
 
     function emptyPage() {
         while (mainDiv.firstChild) {
@@ -12,13 +15,29 @@ function buildPage() {
         }
     }
 
-    return { emptyPage }
-} 
+    function homePage() {
+        emptyPage();
+        //  buildHomePage();
+        console.log("Page build!")
+    }
 
-buildHomePage();
 
-// Make buildPage have a default state
+  
+
+    return { emptyPage, homePage }
+})();
 
 // create EventListeners for Buttons
+(function () {
+    const btnList = document.querySelectorAll("button");
+    for (let i = 0; i < btnList.length; i++) {
+        btnList[i].addEventListener("click", pageBuilder.homePage);
+    }
+    // fix bug for slow page    
+})()
+
+
+
+
 
 // start building each page content
