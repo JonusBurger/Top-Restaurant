@@ -9,15 +9,15 @@ const pageBuilder = (function () {
     const mainDiv = document.getElementById("content");
     console.log("function ran");
 
-    function emptyPage() {
-        while (mainDiv.firstChild) {
-            mainDiv.remove(mainDiv.lastChild);
-        }
+    function emptyPage() {  
+        while (mainDiv.lastChild) {
+            mainDiv.removeChild(mainDiv.lastChild);
+        }   
     }
 
     function homePage() {
         emptyPage();
-        //  buildHomePage();
+        buildHomePage();
         console.log("Page build!")
     }
 
@@ -28,13 +28,21 @@ const pageBuilder = (function () {
 })();
 
 // create EventListeners for Buttons
-(function () {
+document.addEventListener('DOMContentLoaded', () => {
     const btnList = document.querySelectorAll("button");
+    const pageList = [
+        pageBuilder.homePage,
+        pageBuilder.homePage,
+        pageBuilder.homePage,
+        pageBuilder.homePage
+    ]
     for (let i = 0; i < btnList.length; i++) {
-        btnList[i].addEventListener("click", pageBuilder.homePage);
+        btnList[i].removeEventListener("click", pageList[i]); // Remove existing listener
+        btnList[i].addEventListener("click", pageList[i]); // Add new listener
+        console.log(`build buttonlistener ${i}`);
     }
     // fix bug for slow page    
-})()
+});
 
 
 
