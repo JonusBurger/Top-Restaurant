@@ -47,12 +47,25 @@
   isolation: isolate;
   }
 
+#root {
+
+}
+
+body {
+  --primary-color: #C0CAAD;
+  --secondary-color: #654C4F;
+  --menu-color: #B26E63;
+  --button-color: #CEC075;
+  background-color: var(--primary-color);
+}
+
 nav {
   display: flex;
   justify-content: end;
   gap: 20px;
   padding: 10px;
   height: max(50, 10vh);
+  background-color: var(--secondary-color);
 }
 
 #content {
@@ -70,6 +83,7 @@ nav {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 100px repeat(2, minmax(300px, 1fr));
+  gap: 20px;
 }
 
 h1 {
@@ -91,4 +105,28 @@ img {
   height: 100%;
   align-items: center;
   justify-content: center;
+}
+
+.gridContact {
+  display: flex;
+  flex-direction:column;
+  gap: 20px;
+  padding: 50px 150px;
+  border: 1px black solid;
+}
+
+.menu {
+  background-color: var(--menu-color);
+}
+
+.gridCellMenu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+button {
+  background-color: var(--button-color);
+  border-radius: 5px;
+  border-color: var(--button-color);
 }

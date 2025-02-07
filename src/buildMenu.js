@@ -4,6 +4,7 @@ export default function buildMenu() {
     centerDiv.classList.add("center");
     const gridDiv = document.createElement("div");
     gridDiv.classList.add("gridContact");
+    gridDiv.classList.add("menu");
     const header = document.createElement("h1");
     header.classList.add("MenuHeader");
     header.innerText = "The Menu"
