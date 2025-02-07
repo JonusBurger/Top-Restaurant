@@ -47,7 +47,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const pageList = [
         pageBuilder.homePage,
         pageBuilder.menuPage,
-        pageBuilder.homePage,
         pageBuilder.contactPage
     ]
     for (let i = 0; i < btnList.length; i++) {
