@@ -1,6 +1,7 @@
 import "./styles.css";
 import buildHomePage from "./buildHome.js"
 import buildContactPage from "./buildContact.js"
+import buildMenuPage from "./buildMenu.js"
 
 console.log("Moin Maista");
 
@@ -28,10 +29,16 @@ const pageBuilder = (function () {
         console.log("Build Contact Page!");
     }
 
+    function menuPage() {
+        emptyPage();
+        buildMenuPage();
+        console.log("Build MenuPage!");
+    }
+
 
   
 
-    return { emptyPage, homePage, contactPage }
+    return { emptyPage, homePage, contactPage, menuPage }
 })();
 
 // create EventListeners for Buttons
@@ -39,7 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const btnList = document.querySelectorAll("button");
     const pageList = [
         pageBuilder.homePage,
-        pageBuilder.homePage,
+        pageBuilder.menuPage,
         pageBuilder.homePage,
         pageBuilder.contactPage
     ]
