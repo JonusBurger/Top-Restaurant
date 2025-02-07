@@ -52,6 +52,11 @@ nav {
   justify-content: end;
   gap: 20px;
   padding: 10px;
+  height: max(50, 10vh);
+}
+
+#content {
+  height: max(400px, 90vh);
 }
 
 .banner {
@@ -79,4 +84,11 @@ justify-content: center;
 
 img {
   height:100%;
+}
+
+.center {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
 }

@@ -1,5 +1,6 @@
 import "./styles.css";
 import buildHomePage from "./buildHome.js"
+import buildContactPage from "./buildContact.js"
 
 console.log("Moin Maista");
 
@@ -18,13 +19,19 @@ const pageBuilder = (function () {
     function homePage() {
         emptyPage();
         buildHomePage();
-        console.log("Page build!")
+        console.log("Build Homepage!");
+    }
+
+    function contactPage() {
+        emptyPage();
+        buildContactPage();
+        console.log("Build Contact Page!");
     }
 
 
   
 
-    return { emptyPage, homePage }
+    return { emptyPage, homePage, contactPage }
 })();
 
 // create EventListeners for Buttons
@@ -34,18 +41,17 @@ document.addEventListener('DOMContentLoaded', () => {
         pageBuilder.homePage,
         pageBuilder.homePage,
         pageBuilder.homePage,
-        pageBuilder.homePage
+        pageBuilder.contactPage
     ]
     for (let i = 0; i < btnList.length; i++) {
         btnList[i].removeEventListener("click", pageList[i]); // Remove existing listener
         btnList[i].addEventListener("click", pageList[i]); // Add new listener
         console.log(`build buttonlistener ${i}`);
-    }
-    // fix bug for slow page    
+    }  
 });
 
 
 
 
 
-// start building each page content
+// start building each page content - NS. Build Menu
